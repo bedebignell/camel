@@ -250,17 +250,19 @@ public class MyCamelTest {
 Using the `org.apache.camel.test.junit4.CamelSpringJUnit4ClassRunner` runner with the `@RunWith` annotation provides the full feature set of Spring Test with support for the feature set provided in the `CamelTestSupport` classes.
 
 A number of Camel specific annotations have been developed in order to provide for declarative manipulation of the Camel context(s) involved in the test.  These annotations free your test classes from having to inherit from the `CamelSpringTestSupport` classes and also reduce the amount of code required to customize the tests.
-[width="100%",cols="1,1,4,1,1",options="header",]
+[width="100%",cols="1,1,4,1,1",options="header"]
 |=======================================================================
 |Annotation Class |Applies To |Description |Default Behaviour If Not Present |Default Behavior If Present
+
 |org.apache.camel.test.spring.DisableJmx a|Class a|
 Indicates if JMX should be globally disabled in the CamelContexts that are bootstrapped  during the test through the use of Spring Test loaded application contexts. a|
 JMX is disabled a|JMX is disabled
 
-|org.apache.camel.test.spring.ExcludeRoutes a|Class a|
+|org.apache.camel.test.spring.LazyLoadTypeConverters (Deprecated) a|Class a|
 Indicates if certain route builder classes should be excluded from discovery.  Initializes a `org.apache.camel.spi.PackageScanClassResolver` to exclude a set of given classes from being resolved. Typically this is used at test time to exclude certain routes, which might otherwise be just noisy, from being discovered and initialized. a|
 Not enabled and no routes are excluded a|No routes are excluded
 
+|org.apache.camel.test.spring.MissingClass a|Class a|
 Indicates if the CamelContexts that are bootstrapped during the test through the use of Spring Test loaded application contexts should use lazy loading of type converters. a|
 Type converters are not lazy loaded a|
 Type converters are not lazy loaded
